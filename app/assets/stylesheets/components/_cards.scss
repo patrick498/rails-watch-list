@@ -20,10 +20,12 @@
 }
 
 .bookmark-container {
+  background-repeat: no-repeat;
+  background-size: contain;
   position: relative;
 }
 
-.remove-bookmark-icon {
+.bookmark-delete-icon {
   position: absolute;
   top: 10px;
   right: 10px;
