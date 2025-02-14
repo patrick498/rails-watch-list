@@ -1,0 +1,16 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://startuppakistan.com.pk/wp-content/uploads/2022/08/BB-1-scaled.jpg)">
+  Save any kind of movies
+</div>
+<div class='container mt-2'>
+  <div class='d-flex justify-content-between'>
+    <h3>My Lists</h3>
+    <%= link_to 'Create a new movie list', new_list_path, class: 'btn btn-success text-white' %>
+  </div>
+  <div class="cards mt-2">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.enRdcpq2e8f43Y_7GG8F0gHaLX%26pid%3DApi&f=1&ipt=81b6d25727fdd03dd096df66ff498ea2059097b5036407e753b48e91a8a29108&ipo=images)">
+        <%= link_to list.name, list_path(list), class: 'text-decoration-none text-white' %>
+      </div>
+    <% end %>
+  </div>
+</div>
