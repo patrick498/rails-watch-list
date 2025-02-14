@@ -8,7 +8,7 @@
   </div>
   <div class="cards mt-2">
     <% @lists.each do |list| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.enRdcpq2e8f43Y_7GG8F0gHaLX%26pid%3DApi&f=1&ipt=81b6d25727fdd03dd096df66ff498ea2059097b5036407e753b48e91a8a29108&ipo=images)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<=% list.photo.attached? ? (cl_image_path(list.photo.key)) : (image_path('https://startuppakistan.com.pk/wp-content/uploads/2022/08/BB-1-scaled.jpg')) %>)">
         <%= link_to list.name, list_path(list), class: 'text-decoration-none text-white' %>
       </div>
     <% end %>
