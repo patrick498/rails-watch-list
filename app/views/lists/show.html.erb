@@ -3,17 +3,17 @@
     <%= @list.name %>
     <%= link_to 'Add a new bookmark', new_list_bookmark_path(@list), class: 'btn btn-primary text-white bookmark-add-button' %>
   </div>
-  <div class="cards mt-2 mb-2">
+  <div class="bookmark-cards mt-2 mb-2">
     <% @list.bookmarks.each do |bookmark| %>
       <div class="card-category bookmark-container" style="background-image: url(<%= bookmark.movie.poster_url %>), linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1))">
         <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this bookmark?' }, class: 'text-white' do %>
           <i class="fa-solid fa-xmark bookmark-delete-icon"></i>
         <% end %>
-        <p><%= bookmark.comment %></p>
+        <p class='m-2'><i class="fa-solid fa-quote-left"></i><%= bookmark.comment %><i class="fa-solid fa-quote-right"></i></p>
       </div>
     <% end %>
   </div>
   <div>
-    <%= link_to 'Back to Lists', lists_path, class: 'btn btn-primary text-white font-weight-bold' %>
+    <%= link_to 'Back to Lists', lists_path, class: 'btn btn-outline-secondary' %>
   </div>
 </div>
